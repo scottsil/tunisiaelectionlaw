@@ -1,9 +1,9 @@
 require 'rubygems'
 require 'sinatra'
 
-get '/cache.manifest' do
-  Rack::Mime::MIME_TYPES[".manifest"] = "text/cache-manifest"
-end
+Rack::Mime::MIME_TYPES.merge!({
+  ".manifest"     => "text/cache-manifest"
+})
   
 get '/' do
   redirect '/index.html'
