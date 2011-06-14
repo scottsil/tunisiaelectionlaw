@@ -2,11 +2,12 @@ require 'rubygems'
 require 'sinatra'
 
 get '/' do
-  begin
-    File.read(File.join('public', 'index.html'))
-  rescue
-    "Hi there, You're missing an index.html file."
-  end
+  redirect '/index.html'
+  # begin
+  #     File.read(File.join('public', 'index.html'))
+  # rescue
+  #   "Hi there, You're missing an index.html file."
+  # end
 end
 
 not_found do
