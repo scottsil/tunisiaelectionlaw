@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 
-configure do
+get '/cache.manifest' do
   Rack::Mime::MIME_TYPES[".manifest"] = "text/cache-manifest"
 end
   
