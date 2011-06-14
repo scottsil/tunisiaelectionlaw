@@ -1,13 +1,12 @@
 require 'rubygems'
 require 'sinatra'
 
+configure do
+  Rack::Mime::MIME_TYPES[".manifest"] = "text/cache-manifest"
+end
+  
 get '/' do
   redirect '/index.html'
-  # begin
-  #     File.read(File.join('public', 'index.html'))
-  # rescue
-  #   "Hi there, You're missing an index.html file."
-  # end
 end
 
 not_found do
