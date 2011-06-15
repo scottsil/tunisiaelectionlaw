@@ -1,10 +1,6 @@
 require 'rubygems'
 require 'sinatra'
 
-Rack::Mime::MIME_TYPES.merge!({
-  ".manifest"     => "text/cache-manifest"
-})
-  
 get '/cache.manifest' do
   # Must be served with this MIME type
   headers 'Content-Type' => 'text/cache-manifest' 
