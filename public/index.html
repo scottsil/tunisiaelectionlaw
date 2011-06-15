@@ -25,6 +25,67 @@
     .sectionHead {
     	font-weight: bold;
     }
+    #mobify-bubble { display: none; }
+    body.ios #mobify-bubble.on { display: block; opacity: 1; }
+
+    body.mobify-bubble-transition #mobify-bubble {
+     position: absolute; 
+     bottom: 40px; 
+     left: 0; 
+     right: 0;
+     -webkit-transition-property: -webkit-transform, opacity;
+     -webkit-transition-timing-function: ease-in-out;
+     -webkit-transition-duration: .8s, .8s;
+     -webkit-transition-delay: 0, 0; }
+    body.mobify-bubble-transition #mobify-bubble.closing { opacity: 0; }
+
+    body.mobify-bubble-transition #mobify-bubble  #mobify-bubble-content {
+     position: relative; 
+     margin: 0 auto; 
+     height: 90px; 
+     width: 220px;
+     background: gainsboro; 
+     border: 1px solid #fff;
+     -webkit-border-radius: 6px;
+     -webkit-box-shadow: 2px 2px 14px rgba(0,0,0,.4); }
+
+    body.mobify-bubble-transition #mobify-bubble #mobify-bubble-toggle { 
+     display: block; 
+     position: relative; 
+     top: -10px; 
+     left: -10px; 
+     width: 28px; 
+     height: 28px; 
+     text-indent: -9999px; background: url(/apple-touch-icon.png); }
+
+    body.mobify-bubble-transition #mobify-bubble #mobify-bubble-icon{
+     position: absolute; 
+     top: 15px; 
+     left: 20px; 
+     width: 57px; 
+     height: 57px;
+     background:
+      -webkit-gradient(radial, 28 -20, 50, 28 -20, 51, from(rgba(0,0,0,0)), to(rgba(0,0,0,.1))),
+      -webkit-gradient(radial, 28 -50, 50, 28 -50, 80, from(rgba(255,255,255,.8)), to(rgba(255,255,255,0))),
+        url(/apple-touch-icon.png) top left no-repeat;
+     -webkit-border-radius: 8px; 
+     -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.8); }
+
+    body.mobify-bubble-transition #mobify-bubble p {
+     position: absolute; 
+     top: 13px; 
+     right: 10px; 
+     margin: 0;
+     width: 120px;
+     color: #1c1c1c; 
+     font-size: 13px; 
+     line-height: 16px; }
+
+    body.mobify-bubble-transition #mobify-bubble #mobify-bubble-arrow {
+     width: 44px; 
+     height: 37px;
+     margin: -8px auto; 
+     background: url(/apple-touch-icon.png) no-repeat; }
   </style> 
 </head> 
 
@@ -43,6 +104,14 @@
     		<li><a href="#eng">English</a></li>
     	</ul>
   	</div>
+  	<div id="mobify-bubble">
+        <div id="mobify-bubble-content">
+            <div id="mobify-bubble-icon"></div>
+            <div id="mobify-bubble-toggle">X</div>
+            <p>Install this web app on your phone: tap <strong>+</strong> and then <strong>Add to Home Screen</strong>.</p>
+        </div>
+        <div id="mobify-bubble-arrow"></div>
+    </div>
   </div><!-- /page -->
   
   <!-- Start of FRENCH -->
